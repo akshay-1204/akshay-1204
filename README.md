@@ -90,48 +90,6 @@ Collection of backend development projects demonstrating REST API development an
 
 ---
 
-## 📰 Advanced Fake News Detector
-
-Machine Learning project for identifying potentially misleading news through NLP techniques.
-
-### Features
-
-- Text preprocessing
-- NLP techniques
-- Machine Learning models
-- News classification
-
-**Technology Stack**
-
-- Python
-- Scikit-Learn
-- NLP
-- Machine Learning
-
-🔗 Repository: https://github.com/akshay-1204/advanced-fake-news-detector
-
----
-
-## 🧠 AIRA_APP
-
-AI-focused application demonstrating practical intelligent software solutions.
-
-🔗 Repository: https://github.com/akshay-1204/AIRA_APP
-
----
-
-## 🐍 Python Programs
-
-Collection of Python programs for:
-
-- Problem Solving
-- Logical Thinking
-- Python Fundamentals
-- Coding Practice
-
-🔗 Repository: https://github.com/akshay-1204/python-programs
-
----
 
 # 🛠️ Technical Skills
 
@@ -148,6 +106,9 @@ Collection of Python programs for:
 - REST APIs
 - SQLAlchemy
 - Pydantic
+- Alembic
+- PostMan
+- Swagger and Redoc
 
 ## Databases
 
@@ -157,6 +118,8 @@ Collection of Python programs for:
 ## AI & Machine Learning
 
 - Machine Learning
+- ML Algorithms (Linear Regression, Logistic Regression, Decision Trees, Random Forest, KNN, SVM, Naive Bayes, XGBoost, K-Means)
+- Deep Learning
 - Data Science
 - NumPy
 - Pandas
@@ -172,11 +135,14 @@ Collection of Python programs for:
 - Vector Databases
 - Prompt Engineering
 
+
 ## Web Technologies
 
 - HTML
 - CSS
 - JavaScript
+-Streamlit
+
 
 ## Cloud & Tools
 

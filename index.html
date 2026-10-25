@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Profile Explorer for GitHub</title>
+<title>Akshay · GitHub profile</title>
 <style>
 :root{--bg:#fafaf9;--fg:#1c1917;--card:#fff;--mut:#f1f0ee;--mf:#78716c;--bd:#e7e5e4;--pri:#15803d;--prf:#fff;--ring:#16a34a;--r:10px;--h0:#ebedf0;--h1:#9be9a8;--h2:#40c463;--h3:#30a14e;--h4:#216e39}
 :root[data-theme=dark]{--bg:#0c0a09;--fg:#f5f5f4;--card:#171412;--mut:#221f1d;--mf:#a8a29e;--bd:#2c2825;--pri:#4ade80;--prf:#052e16;--ring:#4ade80;--h0:#221f1d;--h1:#0e4429;--h2:#006d32;--h3:#26a641;--h4:#39d353}
@@ -42,13 +42,14 @@ main{padding:20px 0 60px;display:grid;gap:16px}
 #drawer.open{transform:none}#dbody{overflow:auto;padding:16px 20px}
 .md img{max-width:100%}.md pre{overflow:auto;background:var(--mut);padding:10px;border-radius:8px}.md table{border-collapse:collapse;display:block;overflow:auto}.md td,.md th{border:1px solid var(--bd);padding:4px 8px}.md .anchor{display:none}
 .hm{overflow-x:auto}.hm svg{display:block}
+#f,#quick,#hist{display:none!important}
 .sr{position:absolute;left:-9999px}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
 <header><div class="wrap bar">
- <span class="brand">Profile Explorer</span>
+ <span class="brand">akshay-1204</span>
  <form id="f" role="search" class="row" style="flex:1;min-width:260px;max-width:460px">
   <label class="sr" for="q">GitHub username</label>
   <input id="q" placeholder="GitHub username, e.g. torvalds" autocomplete="off" spellcheck="false" style="flex:1">
@@ -110,7 +111,7 @@ async function load(u,push=true){
  u=u.trim().replace(/^@/,'').replace(/.*github\.com\//,'').split('/')[0];
  if(!u){empty();return}
  $('#q').value=u;skeleton();
- if(push)history.pushState(null,'','?user='+encodeURIComponent(u));
+ 
  try{
   const [user,repos,events]=await Promise.all([gh('/users/'+u),pages(`/users/${u}/repos?sort=pushed`,3),pages(`/users/${u}/events/public`,3).catch(()=>[])]);
   S={user,repos,events,q:'',sort:'stars',lang:''};
@@ -223,12 +224,11 @@ $('#dc').onclick=closeD;document.addEventListener('keydown',e=>{if(e.key==='Esca
 // quick + history
 $('#quick').innerHTML='<span class="mut sm">Try:</span>'+NOTABLE.map(n=>`<button class="chip" data-u="${n}">${n}</button>`).join('');
 function renderHist(){const h=store.get('hist',[]);$('#hist').innerHTML=h.length?'<span class="mut">Recent:</span>'+h.map(n=>`<button class="chip" data-u="${esc(n)}">${esc(n)}</button>`).join('')+'<button class="chip" id="clr">Clear</button>':'';const c=$('#clr');if(c)c.onclick=()=>{store.set('hist',[]);renderHist()}}
-document.addEventListener('click',e=>{const b=e.target.closest('[data-u]');if(b)load(b.dataset.u)});
-$('#f').onsubmit=e=>{e.preventDefault();load($('#q').value)};
-addEventListener('popstate',()=>{const u=new URLSearchParams(location.search).get('user');u?load(u,false):empty()});
+
+$('#f').onsubmit=e=>e.preventDefault();
+
 renderHist();
-const init=new URLSearchParams(location.search).get('user');
-load(init||'akshay-1204',!!init&&false);
+load('akshay-1204',false);
 </script>
 </body>
 </html>

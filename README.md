@@ -10,11 +10,9 @@ I enjoy developing scalable APIs, working with databases, building AI applicatio
 
 ## 🌐 Connect With Me
 
-- 🌍 **Portfolio:** https://akshay-1204.github.io/akshay-1204/
-- 💼 **LinkedIn:** https://www.linkedin.com/in/akshay-chowdary-638b01248
-- 💻 **GitHub:** https://github.com/akshay-1204
-
----
+- 🌍 **Portfolio:** [Visit My Website](https://akshay-1204.github.io/akshay-1204/)
+- 💼 **LinkedIn:** [Connect with Me](https://www.linkedin.com/in/akshay-chowdary-638b01248)
+- 💻 **GitHub:** [Explore My Repositories](https://github.com/akshay-1204)
 
 ## 💼 Experience
 
@@ -252,15 +250,16 @@ I am actively looking for opportunities in:
 
 ---
 
-# 📫 Let's Connect
+## 📫 Let's Connect
 
 I'm always excited to learn, collaborate, and build innovative solutions.
 
 Feel free to connect with me through:
 
-- 💼 LinkedIn
-- 💻 GitHub
-- 🌍 Portfolio Website
+- 💼 [LinkedIn](https://www.linkedin.com/in/akshay-chowdary-638b01248)
+- 💻 [GitHub](https://github.com/akshay-1204)
+- 🌍 [Portfolio Website](https://akshay-1204.github.io/akshay-1204/)
+
 
 ---
 

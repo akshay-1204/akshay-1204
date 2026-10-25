@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Profile Explorer for GitHub</title>
+<style>
+:root{--bg:#fafaf9;--fg:#1c1917;--card:#fff;--mut:#f1f0ee;--mf:#78716c;--bd:#e7e5e4;--pri:#15803d;--prf:#fff;--ring:#16a34a;--r:10px;--h0:#ebedf0;--h1:#9be9a8;--h2:#40c463;--h3:#30a14e;--h4:#216e39}
+:root[data-theme=dark]{--bg:#0c0a09;--fg:#f5f5f4;--card:#171412;--mut:#221f1d;--mf:#a8a29e;--bd:#2c2825;--pri:#4ade80;--prf:#052e16;--ring:#4ade80;--h0:#221f1d;--h1:#0e4429;--h2:#006d32;--h3:#26a641;--h4:#39d353}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--pri)}:focus-visible{outline:2px solid var(--ring);outline-offset:2px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+header{border-bottom:1px solid var(--bd);background:var(--card);position:sticky;top:0;z-index:5}
+.bar{display:flex;gap:10px;align-items:center;padding:10px 0;flex-wrap:wrap}
+.brand{font-weight:700;letter-spacing:-.02em;margin-right:auto}
+input,select,button{font:inherit;color:inherit}
+input,select{background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:7px 10px;height:36px}
+button{height:36px;border-radius:8px;border:1px solid var(--bd);background:var(--card);padding:0 12px;cursor:pointer}
+button:hover{background:var(--mut)}button.p{background:var(--pri);color:var(--prf);border-color:var(--pri);font-weight:600}button.p:hover{opacity:.9}
+.chip{height:30px;border-radius:999px;font-size:13px;padding:0 12px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:var(--r);padding:16px}
+h2{font-size:16px;margin:0 0 12px;letter-spacing:-.01em}
+.mut{color:var(--mf)}.sm{font-size:13px}
+main{padding:20px 0 60px;display:grid;gap:16px}
+.prof{display:flex;gap:20px;flex-wrap:wrap}.prof img{width:112px;height:112px;border-radius:50%;border:1px solid var(--bd)}
+.prof h1{margin:0;font-size:26px;letter-spacing:-.02em}
+.meta{display:flex;gap:6px 16px;flex-wrap:wrap;margin-top:10px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px}
+.stat b{display:block;font-size:24px;letter-spacing:-.02em}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:760px){.grid2{grid-template-columns:1fr}}
+.repos{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;margin-top:12px}
+.repo{text-align:left;height:auto;display:flex;flex-direction:column;gap:6px;padding:14px;border-radius:var(--r)}
+.repo b{color:var(--pri)}.topic{background:var(--mut);border-radius:999px;font-size:12px;padding:1px 8px;margin:0 4px 4px 0;display:inline-block}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:4px}
+.sk{background:linear-gradient(90deg,var(--mut),var(--bd),var(--mut));background-size:200% 100%;animation:sh 1.2s infinite;border-radius:8px}@keyframes sh{to{background-position:-200% 0}}
+.feed{list-style:none;margin:0;padding:0;display:grid;gap:10px}.feed li{display:flex;gap:10px;font-size:14px;border-bottom:1px solid var(--bd);padding-bottom:10px}
+.feed li:last-child{border:0}.ic{flex:none;width:28px;height:28px;border-radius:50%;background:var(--mut);display:grid;place-items:center;font-size:12px;font-weight:700;color:var(--pri)}
+.msg{font-family:ui-monospace,monospace;font-size:12.5px;color:var(--mf)}
+.err{text-align:center;padding:40px 16px}.err h2{font-size:20px}
+#drawer{position:fixed;inset:0 0 0 auto;width:min(680px,100%);background:var(--card);border-left:1px solid var(--bd);transform:translateX(100%);transition:transform .2s;z-index:10;display:flex;flex-direction:column;box-shadow:-8px 0 30px #0003}
+#drawer.open{transform:none}#dbody{overflow:auto;padding:16px 20px}
+.md img{max-width:100%}.md pre{overflow:auto;background:var(--mut);padding:10px;border-radius:8px}.md table{border-collapse:collapse;display:block;overflow:auto}.md td,.md th{border:1px solid var(--bd);padding:4px 8px}.md .anchor{display:none}
+.hm{overflow-x:auto}.hm svg{display:block}
+.sr{position:absolute;left:-9999px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap bar">
+ <span class="brand">Profile Explorer</span>
+ <form id="f" role="search" class="row" style="flex:1;min-width:260px;max-width:460px">
+  <label class="sr" for="q">GitHub username</label>
+  <input id="q" placeholder="GitHub username, e.g. torvalds" autocomplete="off" spellcheck="false" style="flex:1">
+  <button class="p" type="submit">Search</button>
+ </form>
+ <button id="tok" title="Add a GitHub token to raise the rate limit">Token</button>
+ <button id="th" aria-label="Toggle dark or light theme">Theme</button>
+</div></header>
+<main class="wrap">
+ <section aria-label="Quick try" class="row" id="quick"></section>
+ <section aria-label="Recent searches" class="row sm" id="hist"></section>
+ <div id="app" aria-live="polite"></div>
+</main>
+<aside id="drawer" role="dialog" aria-modal="true" aria-labelledby="dt" aria-hidden="true">
+ <div class="row" style="padding:12px 20px;border-bottom:1px solid var(--bd)"><h2 id="dt" style="margin:0;flex:1"></h2><a id="dl" target="_blank" rel="noopener">Open on GitHub</a><button id="dc">Close</button></div>
+ <div id="dbody"></div>
+</aside>
+<script>
+const $=s=>document.querySelector(s),app=$('#app');
+const NOTABLE=['torvalds','gaearon','sindresorhus','tj','yyx990803','addyosmani','akshay-1204'];
+const LC={JavaScript:'#f1e05a',TypeScript:'#3178c6',Python:'#3572A5',Java:'#b07219',Go:'#00ADD8',Rust:'#dea584',C:'#888','C++':'#f34b7d','C#':'#178600',HTML:'#e34c26',CSS:'#563d7c',Shell:'#89e051',Ruby:'#701516',PHP:'#4F5D95',Kotlin:'#A97BFF',Swift:'#F05138',Dart:'#00B4AB',Jupyter:'#DA5B0B','Jupyter Notebook':'#DA5B0B',Vue:'#41b883'};
+const col=l=>LC[l]||'#a8a29e';
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt=n=>n>=1e3?(n/1e3).toFixed(n>=1e4?0:1)+'k':n;
+const store={get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch{}}};
+const rel=d=>{const s=(Date.now()-new Date(d))/1e3,u=[[31536e3,'y'],[2592e3,'mo'],[86400,'d'],[3600,'h'],[60,'m']];for(const[n,l]of u)if(s>=n)return Math.floor(s/n)+l+' ago';return 'just now'};
+const dfmt=d=>new Date(d).toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'});
+
+// theme
+const setTheme=t=>{document.documentElement.dataset.theme=t;store.set('theme',t)};
+setTheme(store.get('theme',matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));
+$('#th').onclick=()=>setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark');
+$('#tok').onclick=()=>{const t=prompt('Optional GitHub personal access token (stored only in this browser). Leave empty to remove.',store.get('token',''));if(t!==null){store.set('token',t.trim());alert(t.trim()?'Token saved. Rate limit raised.':'Token removed.')}};
+
+// api
+class ApiErr extends Error{constructor(k,m){super(m);this.kind=k}}
+async function gh(path,accept){
+ const h={Accept:accept||'application/vnd.github+json'},t=store.get('token','');if(t)h.Authorization='Bearer '+t;
+ const r=await fetch('https://api.github.com'+path,{headers:h});
+ if(r.status===404)throw new ApiErr('404','Not found');
+ if(r.status===403||r.status===429){const rs=r.headers.get('x-ratelimit-reset');throw new ApiErr('rate',rs?new Date(rs*1e3).toLocaleTimeString():'')}
+ if(!r.ok)throw new ApiErr('other','GitHub returned '+r.status);
+ return accept?r.text():r.json();
+}
+async function pages(path,max){let all=[];for(let p=1;p<=max;p++){const d=await gh(path+(path.includes('?')?'&':'?')+'per_page=100&page='+p);all=all.concat(d);if(d.length<100)break}return all}
+
+let S={};
+function skeleton(){app.innerHTML='<div class="card" aria-busy="true"><div class="row" style="gap:20px"><div class="sk" style="width:112px;height:112px;border-radius:50%"></div><div style="flex:1;min-width:200px;display:grid;gap:10px"><div class="sk" style="height:28px;width:50%"></div><div class="sk" style="height:16px;width:80%"></div><div class="sk" style="height:16px;width:60%"></div></div></div></div><div class="stats" style="margin-top:16px">'+'<div class="sk" style="height:80px"></div>'.repeat(5)+'</div><div class="sk" style="height:240px;margin-top:16px"></div>'}
+function empty(){app.innerHTML='<div class="card err"><h2>Look up any GitHub profile</h2><p class="mut">Type a username above, or try one of the profiles in the row.</p></div>'}
+function showErr(e,u){
+ let h;
+ if(e.kind==='404')h=`<h2>No user named “${esc(u)}”</h2><p class="mut">Check the spelling. GitHub usernames use letters, numbers and hyphens.</p>`;
+ else if(e.kind==='rate')h=`<h2>GitHub rate limit reached</h2><p class="mut">Anonymous requests are limited to 60 per hour.${e.message?' The limit resets around '+esc(e.message)+'.':''} Add a personal access token to raise it to 5,000 per hour.</p><button class="p" onclick="document.getElementById('tok').click()">Add token</button>`;
+ else h=`<h2>Couldn’t load this profile</h2><p class="mut">${esc(e.message||'Network error')}. Check your connection and try again.</p>`;
+ app.innerHTML='<div class="card err" role="alert">'+h+'</div>';
+}
+
+async function load(u,push=true){
+ u=u.trim().replace(/^@/,'').replace(/.*github\.com\//,'').split('/')[0];
+ if(!u){empty();return}
+ $('#q').value=u;skeleton();
+ if(push)history.pushState(null,'','?user='+encodeURIComponent(u));
+ try{
+  const [user,repos,events]=await Promise.all([gh('/users/'+u),pages(`/users/${u}/repos?sort=pushed`,3),pages(`/users/${u}/events/public`,3).catch(()=>[])]);
+  S={user,repos,events,q:'',sort:'stars',lang:''};
+  const h=store.get('hist',[]).filter(x=>x.toLowerCase()!==user.login.toLowerCase());h.unshift(user.login);store.set('hist',h.slice(0,8));renderHist();
+  document.title=(user.name||user.login)+' · Profile Explorer';
+  render();
+ }catch(e){showErr(e,u)}
+}
+
+function render(){
+ const{user:u,repos}=S,own=repos.filter(r=>!r.fork);
+ const sum=k=>repos.reduce((a,r)=>a+(r[k]||0),0);
+ const langs={};repos.forEach(r=>{if(r.language)langs[r.language]=(langs[r.language]||0)+1});
+ S.langs=Object.entries(langs).sort((a,b)=>b[1]-a[1]);
+ const tw=u.twitter_username,blog=u.blog&&(u.blog.startsWith('http')?u.blog:'https://'+u.blog);
+ const top=[...repos].sort((a,b)=>b.stargazers_count-a.stargazers_count).slice(0,5);
+ app.innerHTML=`
+ <section class="card prof" aria-label="Profile">
+  <img src="${esc(u.avatar_url)}" alt="Avatar of ${esc(u.login)}">
+  <div style="flex:1;min-width:220px"><h1>${esc(u.name||u.login)}</h1>
+   <a href="${esc(u.html_url)}" target="_blank" rel="noopener" class="mut">@${esc(u.login)}</a>
+   ${u.bio?`<p style="margin:10px 0 0">${esc(u.bio)}</p>`:''}
+   <div class="meta sm mut">
+    ${u.company?`<span>🏢 ${esc(u.company)}</span>`:''}${u.location?`<span>📍 ${esc(u.location)}</span>`:''}
+    ${blog?`<a href="${esc(blog)}" target="_blank" rel="noopener">🔗 ${esc(u.blog)}</a>`:''}
+    ${tw?`<a href="https://twitter.com/${esc(tw)}" target="_blank" rel="noopener">𝕏 @${esc(tw)}</a>`:''}
+    <span>📅 Joined ${dfmt(u.created_at)}</span></div>
+   <div class="meta sm"><span><b>${fmt(u.followers)}</b> followers</span><span><b>${fmt(u.following)}</b> following</span><span><b>${u.public_repos}</b> public repos</span></div>
+  </div>
+ </section>
+ <section class="stats" aria-label="Aggregate stats">
+  ${[['Stars',sum('stargazers_count')],['Forks',sum('forks_count')],['Watchers',sum('watchers_count')],['Open issues',sum('open_issues_count')],['Repos loaded',repos.length]].map(([l,v])=>`<div class="card stat"><b>${fmt(v)}</b><span class="mut sm">${l}</span></div>`).join('')}
+ </section>
+ <div class="grid2">
+  <section class="card" aria-label="Languages"><h2>Language breakdown</h2>${donut()}</section>
+  <section class="card" aria-label="Top repositories"><h2>Repos by stars</h2>${bars(top)}</section>
+ </div>
+ <section class="card" aria-label="Contribution heatmap"><h2>Commit activity <span class="mut sm" style="font-weight:400">from public events, last ~90 days</span></h2><div class="hm">${heat()}</div></section>
+ <div class="grid2">
+  <section class="card" aria-label="Top repo highlights"><h2>Top repo highlights</h2>${top.length?top.slice(0,3).map(r=>`<p style="margin:0 0 10px"><b><a href="#" data-repo="${esc(r.name)}">${esc(r.name)}</a></b> <span class="mut sm">★ ${fmt(r.stargazers_count)} · ${fmt(r.forks_count)} forks</span><br><span class="mut sm">${esc(r.description||'No description')}</span></p>`).join(''):'<p class="mut">No public repositories yet.</p>'}</section>
+  <section class="card" aria-label="Recent activity"><h2>Recent activity</h2>${feed()}</section>
+ </div>
+ <section aria-label="Repositories"><h2>Repositories</h2>
+  <div class="row">
+   <label class="sr" for="rq">Search repositories</label><input id="rq" type="search" placeholder="Search repositories" style="flex:1;min-width:180px">
+   <label class="sr" for="rs">Sort</label><select id="rs"><option value="stars">Most stars</option><option value="updated">Recently updated</option><option value="name">Name</option></select>
+   <label class="sr" for="rl">Language</label><select id="rl"><option value="">All languages</option>${S.langs.map(([l])=>`<option>${esc(l)}</option>`).join('')}</select>
+  </div><div class="repos" id="rl-list"></div></section>`;
+ $('#rq').oninput=e=>{S.q=e.target.value;list()};$('#rs').onchange=e=>{S.sort=e.target.value;list()};$('#rl').onchange=e=>{S.lang=e.target.value;list()};
+ app.querySelectorAll('[data-repo]').forEach(a=>a.onclick=e=>{e.preventDefault();openRepo(a.dataset.repo)});
+ list();
+}
+function list(){
+ let r=S.repos.filter(x=>(!S.lang||x.language===S.lang)&&(!S.q||(x.name+' '+(x.description||'')+' '+(x.topics||[]).join(' ')).toLowerCase().includes(S.q.toLowerCase())));
+ r.sort(S.sort==='stars'?(a,b)=>b.stargazers_count-a.stargazers_count:S.sort==='name'?(a,b)=>a.name.localeCompare(b.name):(a,b)=>new Date(b.pushed_at)-new Date(a.pushed_at));
+ $('#rl-list').innerHTML=r.length?r.map(x=>`<button class="card repo" data-repo="${esc(x.name)}" aria-label="Open ${esc(x.name)} details"><b>${esc(x.name)}</b><span class="sm mut">${esc(x.description||'No description')}</span><span>${(x.topics||[]).slice(0,5).map(t=>`<span class="topic">${esc(t)}</span>`).join('')}</span><span class="sm mut" style="margin-top:auto">${x.language?`<span class="dot" style="background:${col(x.language)}"></span>${esc(x.language)} · `:''}★ ${fmt(x.stargazers_count)} · ⑂ ${fmt(x.forks_count)} · pushed ${rel(x.pushed_at)}</span></button>`).join(''):'<p class="mut">No repositories match these filters.</p>';
+ $('#rl-list').querySelectorAll('[data-repo]').forEach(b=>b.onclick=()=>openRepo(b.dataset.repo));
+}
+
+function donut(){
+ const L=S.langs;if(!L.length)return'<p class="mut">No language data.</p>';
+ const t=L.reduce((a,[,n])=>a+n,0),R=52,C=2*Math.PI*R;let off=0;
+ const arcs=L.slice(0,8).map(([l,n])=>{const len=n/t*C,s=`<circle r="${R}" cx="70" cy="70" fill="none" stroke="${col(l)}" stroke-width="22" stroke-dasharray="${len} ${C-len}" stroke-dashoffset="${-off}" transform="rotate(-90 70 70)"><title>${esc(l)}: ${n}</title></circle>`;off+=len;return s}).join('');
+ return`<div class="row" style="gap:20px"><svg width="140" height="140" viewBox="0 0 140 140" role="img" aria-label="Language donut chart">${arcs}<text x="70" y="75" text-anchor="middle" font-size="14" fill="currentColor">${t} repos</text></svg><ul style="list-style:none;margin:0;padding:0" class="sm">${L.slice(0,8).map(([l,n])=>`<li><span class="dot" style="background:${col(l)}"></span>${esc(l)} <span class="mut">${Math.round(n/t*100)}%</span></li>`).join('')}</ul></div>`;
+}
+function bars(top){
+ const m=Math.max(1,...top.map(r=>r.stargazers_count));if(!top.length)return'<p class="mut">No repositories.</p>';
+ return`<svg width="100%" viewBox="0 0 400 ${top.length*32}" role="img" aria-label="Repositories by stars">${top.map((r,i)=>{const w=Math.max(2,r.stargazers_count/m*230);return`<text x="0" y="${i*32+19}" font-size="12" fill="currentColor">${esc(r.name.slice(0,18))}</text><rect x="130" y="${i*32+5}" width="${w}" height="20" rx="4" fill="var(--pri)"><title>${r.stargazers_count} stars</title></rect><text x="${136+w}" y="${i*32+19}" font-size="12" fill="currentColor">${fmt(r.stargazers_count)}</text>`}).join('')}</svg>`;
+}
+function heat(){
+ const c={};S.events.forEach(e=>{if(e.type==='PushEvent'){const d=e.created_at.slice(0,10);c[d]=(c[d]||0)+(e.payload.size||e.payload.commits?.length||1)}});
+ const W=18,end=new Date();end.setHours(0,0,0,0);const start=new Date(end);start.setDate(start.getDate()-(W*7-1)-end.getDay());
+ let cells='';for(let i=0;i<W*7;i++){const d=new Date(start);d.setDate(start.getDate()+i);if(d>end)break;const k=d.toISOString().slice(0,10),n=c[k]||0,lv=n===0?0:n<3?1:n<6?2:n<10?3:4;cells+=`<rect x="${Math.floor(i/7)*14}" y="${(i%7)*14}" width="11" height="11" rx="2" fill="var(--h${lv})"><title>${n} commits on ${dfmt(k)}</title></rect>`}
+ const total=Object.values(c).reduce((a,b)=>a+b,0);
+ return`<svg width="${W*14}" height="98" role="img" aria-label="Commit heatmap, ${total} commits">${cells}</svg><p class="sm mut" style="margin:6px 0 0">${total} commits in public push events. GitHub only exposes about 90 days of events.</p>`;
+}
+function feed(){
+ const ev=S.events.slice(0,12);if(!ev.length)return'<p class="mut">No recent public activity.</p>';
+ const d=e=>{const p=e.payload,r=`<b>${esc(e.repo.name)}</b>`;switch(e.type){
+  case'PushEvent':{const n=p.size||p.commits?.length||0;return['⬆',`Pushed ${n} commit${n===1?'':'s'} to ${r}`,p.commits?.[p.commits.length-1]?.message.split('\n')[0]]}
+  case'PullRequestEvent':return['⇄',`${p.action} pull request #${p.number} in ${r}`,p.pull_request?.title];
+  case'IssuesEvent':return['!',`${p.action} issue #${p.issue.number} in ${r}`,p.issue.title];
+  case'IssueCommentEvent':return['💬',`Commented on #${p.issue.number} in ${r}`,p.comment?.body?.slice(0,100)];
+  case'WatchEvent':return['★',`Starred ${r}`];
+  case'ReleaseEvent':return['🏷',`${p.action} release ${esc(p.release.tag_name)} in ${r}`,p.release.name];
+  case'CreateEvent':return['+',`Created ${p.ref_type}${p.ref?' '+esc(p.ref):''} in ${r}`];
+  case'DeleteEvent':return['−',`Deleted ${p.ref_type} ${esc(p.ref)} in ${r}`];
+  case'ForkEvent':return['⑂',`Forked ${r}`];
+  default:return['•',e.type.replace('Event','')+' in '+r]}};
+ return'<ul class="feed">'+ev.map(e=>{const[i,t,m]=d(e);return`<li><span class="ic" aria-hidden="true">${i}</span><div><div>${t} <span class="mut sm">· ${rel(e.created_at)}</span></div>${m?`<div class="msg">${esc(m)}</div>`:''}</div></li>`}).join('')+'</ul>';
+}
+
+// drawer
+let lastFocus;
+async function openRepo(name){
+ const r=S.repos.find(x=>x.name===name);lastFocus=document.activeElement;
+ $('#dt').textContent=r.full_name;$('#dl').href=r.html_url;
+ $('#dbody').innerHTML=`<p>${esc(r.description||'')}</p><p class="sm mut">★ ${fmt(r.stargazers_count)} · ⑂ ${fmt(r.forks_count)} · 👁 ${fmt(r.watchers_count)} · ${r.open_issues_count} open issues · ${r.language?esc(r.language)+' · ':''}pushed ${rel(r.pushed_at)}</p><div>${(r.topics||[]).map(t=>`<span class="topic">${esc(t)}</span>`).join('')}</div><hr style="border:0;border-top:1px solid var(--bd)"><div class="sk" style="height:200px"></div>`;
+ $('#drawer').classList.add('open');$('#drawer').setAttribute('aria-hidden','false');$('#dc').focus();
+ const head=$('#dbody').innerHTML.split('<hr')[0];
+ try{
+  const h=await gh(`/repos/${r.full_name}/readme`,'application/vnd.github.html+json');
+  const safe=h.replace(/<script[\s\S]*?<\/script>/gi,'').replace(/\son\w+="[^"]*"/gi,'');
+  $('#dbody').innerHTML=head+'<hr style="border:0;border-top:1px solid var(--bd)"><article class="md">'+safe+'</article>';
+ }catch(e){$('#dbody').innerHTML=head+'<hr style="border:0;border-top:1px solid var(--bd)"><p class="mut">'+(e.kind==='404'?'This repository has no README.':e.kind==='rate'?'Rate limit reached. Add a token to load READMEs.':'README could not be loaded.')+'</p>'}
+}
+function closeD(){$('#drawer').classList.remove('open');$('#drawer').setAttribute('aria-hidden','true');lastFocus&&lastFocus.focus()}
+$('#dc').onclick=closeD;document.addEventListener('keydown',e=>{if(e.key==='Escape')closeD();if(e.key==='/'&&!/INPUT|SELECT/.test(document.activeElement.tagName)){e.preventDefault();$('#q').focus()}});
+
+// quick + history
+$('#quick').innerHTML='<span class="mut sm">Try:</span>'+NOTABLE.map(n=>`<button class="chip" data-u="${n}">${n}</button>`).join('');
+function renderHist(){const h=store.get('hist',[]);$('#hist').innerHTML=h.length?'<span class="mut">Recent:</span>'+h.map(n=>`<button class="chip" data-u="${esc(n)}">${esc(n)}</button>`).join('')+'<button class="chip" id="clr">Clear</button>':'';const c=$('#clr');if(c)c.onclick=()=>{store.set('hist',[]);renderHist()}}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-u]');if(b)load(b.dataset.u)});
+$('#f').onsubmit=e=>{e.preventDefault();load($('#q').value)};
+addEventListener('popstate',()=>{const u=new URLSearchParams(location.search).get('user');u?load(u,false):empty()});
+renderHist();
+const init=new URLSearchParams(location.search).get('user');
+load(init||'akshay-1204',!!init&&false);
+</script>
+</body>
+</html>

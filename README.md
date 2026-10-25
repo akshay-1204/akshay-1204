@@ -1,162 +1,229 @@
-Hi, I'm Akshay Chowdary 👋
-🚀 Python Developer | FastAPI Backend Developer | AI/ML & Generative AI Enthusiast
-I'm an Information Technology graduate passionate about building practical software solutions using Python, Backend Development, Artificial Intelligence, Machine Learning, and Generative AI.
+# Hi, I'm Akshay Chowdary 👋
 
-I enjoy solving real-world problems, developing scalable APIs, working with databases, and exploring modern AI technologies such as LLMs, RAG pipelines, and AI-powered applications.
+### 🚀 Python Developer | FastAPI Backend Developer | AI/ML & Generative AI Enthusiast
 
-🌐 Connect With Me
-🌍 Portfolio: https://akshay-1204.github.io/akshay-1204/
+I'm an Information Technology graduate passionate about building practical software solutions using **Python, Backend Development, Artificial Intelligence, Machine Learning, and Generative AI**.
 
-💼 LinkedIn: https://www.linkedin.com/in/akshay-chowdary-638b01248
+I enjoy developing scalable APIs, working with databases, building AI applications, and solving real-world problems through technology.
 
-💻 GitHub: https://github.com/akshay-1204
+---
 
-📧 Open to collaborations, internships, and entry-level opportunities in Python Development, Backend Engineering, AI/ML, and Generative AI.
+## 🌐 Connect With Me
 
-💼 Experience
-Python & Generative AI Intern
-Datavalley.ai
+- 🌍 **Portfolio:** https://akshay-1204.github.io/akshay-1204/
+- 💼 **LinkedIn:** https://www.linkedin.com/in/akshay-chowdary-638b01248
+- 💻 **GitHub:** https://github.com/akshay-1204
 
-Developing AI-powered applications using Python
-Working with LLMs, RAG pipelines, and AI workflows
-Building backend solutions and integrating databases
-Exploring modern Generative AI technologies
-Data Science Intern
-NSIC
+---
 
-Worked on Machine Learning and Data Analysis projects
-Performed data preprocessing and visualization
-Gained practical experience with Python-based Data Science tools
-🚀 Featured Projects
-🤖 ContextGPT
+## 💼 Experience
+
+### Python & Generative AI Intern | Datavalley.ai
+
+- Developing AI-powered applications using Python
+- Working with LLMs and RAG pipelines
+- Building backend systems and database integrations
+- Exploring modern Generative AI technologies
+
+### Data Science Intern | NSIC
+
+- Worked on Machine Learning projects
+- Performed data preprocessing and visualization
+- Utilized Python for analysis and problem-solving
+
+---
+
+# 🚀 Featured Projects
+
+## 🤖 ContextGPT
+
 AI-powered project focused on context-aware applications and modern LLM workflows.
 
-Highlights
-Built context-aware AI workflows
-Explored retrieval-based architectures
-Worked with Generative AI and language models
-Tech Stack: Python, LangChain, LLMs, Generative AI
+### Key Features
+
+- Context-aware AI interactions
+- LLM workflow implementation
+- Retrieval-based architecture exploration
+- Generative AI applications
+
+**Technology Stack**
+
+- Python
+- LangChain
+- LLMs
+- Generative AI
 
 🔗 Repository: https://github.com/akshay-1204/ContextGPT
 
-⚙️ FastAPI & PostgreSQL Projects
-Backend projects demonstrating REST API development, database integration, and software engineering best practices.
+---
 
-Projects Included
-🚗 Vehicle Management & Multi-Tenant Fleet API
-Vehicle information management
-Service history tracking
-Multi-tenant architecture
-📚 Bookstore Management & Order Processing API
-Inventory management
-Order processing
-Customer operations
-📝 RESTful Blog Engine & Authentication Service
-Authentication & authorization
-CRUD operations
-Blog management system
-Tech Stack:
+## ⚙️ FastAPI & PostgreSQL Projects
 
-Python
-FastAPI
-PostgreSQL
-SQLAlchemy
-Pydantic
-REST APIs
+Collection of backend development projects demonstrating REST API development and database integration.
+
+### 🚗 Vehicle Management & Multi-Tenant Fleet API
+
+- Vehicle information management
+- Service history tracking
+- Fleet operations
+
+### 📚 Bookstore Management & Order Processing API
+
+- Inventory management
+- Order processing
+- Customer operations
+
+### 📝 RESTful Blog Engine & Authentication Service
+
+- User authentication
+- CRUD operations
+- Blog management
+
+**Technology Stack**
+
+- Python
+- FastAPI
+- PostgreSQL
+- SQLAlchemy
+- Pydantic
+- REST APIs
+
 🔗 Repository: https://github.com/akshay-1204/postgresql-fastapi
 
-📰 Advanced Fake News Detector
-Machine Learning project focused on detecting potentially misleading news articles using NLP techniques.
+---
 
-Highlights
-Text preprocessing
-Feature engineering
-Classification models
-News credibility analysis
-Tech Stack: Python, Scikit-Learn, NLP, Machine Learning
+## 📰 Advanced Fake News Detector
+
+Machine Learning project for identifying potentially misleading news through NLP techniques.
+
+### Features
+
+- Text preprocessing
+- NLP techniques
+- Machine Learning models
+- News classification
+
+**Technology Stack**
+
+- Python
+- Scikit-Learn
+- NLP
+- Machine Learning
 
 🔗 Repository: https://github.com/akshay-1204/advanced-fake-news-detector
 
-🧠 AIRA_APP
-AI application project focused on building practical intelligent software solutions.
+---
+
+## 🧠 AIRA_APP
+
+AI-focused application demonstrating practical intelligent software solutions.
 
 🔗 Repository: https://github.com/akshay-1204/AIRA_APP
 
-🐍 Python Programs
-Collection of Python programs covering:
+---
 
-Python fundamentals
-Logical thinking
-Data structures
-Problem-solving techniques
-Coding practice
+## 🐍 Python Programs
+
+Collection of Python programs for:
+
+- Problem Solving
+- Logical Thinking
+- Python Fundamentals
+- Coding Practice
+
 🔗 Repository: https://github.com/akshay-1204/python-programs
 
-🛠️ Technical Skills
-Programming Languages
-Python
-Java
-C
-SQL
-Backend Development
-FastAPI
-REST APIs
-SQLAlchemy
-Pydantic
-Backend Architecture
-Databases
-PostgreSQL
-MySQL
-AI & Machine Learning
-Machine Learning
-Data Science
-NumPy
-Pandas
-Matplotlib
-Scikit-Learn
-NLP Fundamentals
-Generative AI
-Large Language Models (LLMs)
-Retrieval-Augmented Generation (RAG)
-LangChain
-Vector Databases
-Prompt Engineering
-Web Technologies
-HTML
-CSS
-JavaScript
-Cloud & Development Tools
-Git
-GitHub
-Docker
-AWS Fundamentals
-Google Cloud Platform (GCP)
-🌱 Currently Learning
-Advanced FastAPI Development
-System Design Fundamentals
-Docker & Containerization
-Linux Administration
-DevOps Fundamentals
-Google Cloud Platform (GCP)
-MLOps
-LLMOps
-Scalable AI Systems
-Vector Databases
-🎯 Career Goals
-Build scalable backend systems
-Develop real-world AI applications
-Master software engineering best practices
-Gain expertise in Generative AI and LLM technologies
-Contribute to impactful open-source projects
-Grow as a Python and Backend Developer
-📊 GitHub Focus Areas
+---
+
+# 🛠️ Technical Skills
+
+## Programming Languages
+
+- Python
+- Java
+- C
+- SQL
+
+## Backend Development
+
+- FastAPI
+- REST APIs
+- SQLAlchemy
+- Pydantic
+
+## Databases
+
+- PostgreSQL
+- MySQL
+
+## AI & Machine Learning
+
+- Machine Learning
+- Data Science
+- NumPy
+- Pandas
+- Matplotlib
+- Scikit-Learn
+- NLP Fundamentals
+
+## Generative AI
+
+- Large Language Models (LLMs)
+- LangChain
+- RAG
+- Vector Databases
+- Prompt Engineering
+
+## Web Technologies
+
+- HTML
+- CSS
+- JavaScript
+
+## Cloud & Tools
+
+- Git
+- GitHub
+- Docker
+- Google Cloud Platform (GCP)
+- AWS Fundamentals
+
+---
+
+# 🌱 Currently Learning
+
+- Advanced FastAPI Development
+- Linux Administration
+- Docker & Containerization
+- DevOps Fundamentals
+- Google Cloud Platform (GCP)
+- MLOps
+- LLMOps
+- Vector Databases
+- Scalable AI Systems
+
+---
+
+# 🎯 Career Goals
+
+- Build scalable backend applications
+- Develop AI-powered software solutions
+- Master software engineering practices
+- Gain expertise in Generative AI
+- Contribute to open-source projects
+- Grow as a Python Backend Developer
+
+---
+
+# 🚀 Areas of Interest
+
 ✅ Python Development
 
 ✅ Backend Engineering
 
-✅ FastAPI Projects
+✅ FastAPI
 
-✅ PostgreSQL Databases
+✅ PostgreSQL
 
 ✅ Artificial Intelligence
 
@@ -168,20 +235,33 @@ Grow as a Python and Backend Developer
 
 ✅ LLM Workflows
 
-✅ Open Source Learning
+✅ Open Source
 
-🤝 Open To Opportunities
-I'm actively interested in:
+---
 
-Python Developer Roles
-Backend Developer Roles
-AI/ML Roles
-Generative AI Opportunities
-Internship Positions
-Open Source Collaborations
-🚀 Let's Build Something Amazing Together!
-I'm always learning, building, and experimenting with new technologies.
+# 🤝 Open To Opportunities
 
-If you're interested in Python Development, Backend Engineering, AI/ML, or Generative AI, feel free to connect with me.
+I am actively looking for opportunities in:
+
+- Python Developer Roles
+- Backend Developer Roles
+- AI/ML Roles
+- Generative AI Roles
+- Software Development Internships
+- Open Source Collaborations
+
+---
+
+# 📫 Let's Connect
+
+I'm always excited to learn, collaborate, and build innovative solutions.
+
+Feel free to connect with me through:
+
+- 💼 LinkedIn
+- 💻 GitHub
+- 🌍 Portfolio Website
+
+---
 
 ⭐ Thanks for visiting my profile!

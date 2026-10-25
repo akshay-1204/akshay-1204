@@ -20,7 +20,7 @@ Open `index.html` in a browser. No build step and no dependencies.
 2. Go to **Settings → Pages** and set **Source** to **GitHub Actions**.
 3. The included workflow publishes the site on every push to `main`.
 
-Your site will be at `https://<your-username>.github.io/<repo-name>/`.
+Your site will be at https://akshay-1204.github.io/akshay-1204/.
 
 ## Rate limit
 Anonymous GitHub API access allows 60 requests per hour. Click **Token** in the header to add a personal access token (stored only in your browser) and raise it to 5,000 per hour. A token with no scopes is enough.

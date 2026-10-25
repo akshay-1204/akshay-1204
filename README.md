@@ -1,91 +1,187 @@
-# Hi, I'm Akshay Chowdary 👋
+Hi, I'm Akshay Chowdary 👋
+🚀 Python Developer | FastAPI Backend Developer | AI/ML & Generative AI Enthusiast
+I'm an Information Technology graduate passionate about building practical software solutions using Python, Backend Development, Artificial Intelligence, Machine Learning, and Generative AI.
 
-### Python Developer | AI/ML Enthusiast | Generative AI Learner
+I enjoy solving real-world problems, developing scalable APIs, working with databases, and exploring modern AI technologies such as LLMs, RAG pipelines, and AI-powered applications.
 
-I'm an Information Technology graduate passionate about building practical applications using Python, Artificial Intelligence, Machine Learning, and Generative AI. I enjoy solving real-world problems, developing backend APIs, working with databases, and exploring modern AI technologies.
+🌐 Connect With Me
+🌍 Portfolio: https://akshay-1204.github.io/akshay-1204/
 
-🌐 **Portfolio:** [Visit My Website](https://akshay-1204.github.io/akshay-1204/)  
-💼 **LinkedIn:** [Connect with Me](https://www.linkedin.com/in/akshay-chowdary-638b01248)  
-💻 **GitHub:** [Explore My Repositories](https://github.com/akshay-1204)
+💼 LinkedIn: https://www.linkedin.com/in/akshay-chowdary-638b01248
 
----
+💻 GitHub: https://github.com/akshay-1204
 
-## 🚀 Featured Projects
+📧 Open to collaborations, internships, and entry-level opportunities in Python Development, Backend Engineering, AI/ML, and Generative AI.
 
-### 🤖 [ContextGPT](https://github.com/akshay-1204/ContextGPT)
-An AI-focused project exploring context-aware applications and modern language model workflows.
+💼 Experience
+Python & Generative AI Intern
+Datavalley.ai
 
-**Focus:** Python, Generative AI, LLMs, and context-aware applications.
+Developing AI-powered applications using Python
+Working with LLMs, RAG pipelines, and AI workflows
+Building backend solutions and integrating databases
+Exploring modern Generative AI technologies
+Data Science Intern
+NSIC
 
-### 📰 [Advanced Fake News Detector](https://github.com/akshay-1204/advanced-fake-news-detector)
-A Python project focused on detecting potentially misleading news using machine learning and text analysis.
+Worked on Machine Learning and Data Analysis projects
+Performed data preprocessing and visualization
+Gained practical experience with Python-based Data Science tools
+🚀 Featured Projects
+🤖 ContextGPT
+AI-powered project focused on context-aware applications and modern LLM workflows.
 
-**Focus:** Python, Machine Learning, NLP, and data processing.
+Highlights
+Built context-aware AI workflows
+Explored retrieval-based architectures
+Worked with Generative AI and language models
+Tech Stack: Python, LangChain, LLMs, Generative AI
 
-### ⚙️ [FastAPI & PostgreSQL Projects](https://github.com/akshay-1204/postgresql-fastapi)
-A collection of three backend development projects demonstrating REST API development, database integration, and Python backend engineering.
+🔗 Repository: https://github.com/akshay-1204/ContextGPT
 
-- **Vehicle Management & Multi-Tenant Fleet API** — Vehicle management, service records, and related business operations.
-- **Bookstore Management & Order Processing API** — Bookstore operations and inventory-related workflows.
-- **RESTful Blog Engine & Authentication Service** — Blog management and CRUD operations.
+⚙️ FastAPI & PostgreSQL Projects
+Backend projects demonstrating REST API development, database integration, and software engineering best practices.
 
-**Technologies:** Python, FastAPI, PostgreSQL, SQLAlchemy, Pydantic, and REST APIs.
+Projects Included
+🚗 Vehicle Management & Multi-Tenant Fleet API
+Vehicle information management
+Service history tracking
+Multi-tenant architecture
+📚 Bookstore Management & Order Processing API
+Inventory management
+Order processing
+Customer operations
+📝 RESTful Blog Engine & Authentication Service
+Authentication & authorization
+CRUD operations
+Blog management system
+Tech Stack:
 
-### 🧠 [AIRA_APP](https://github.com/akshay-1204/AIRA_APP)
-An AI application project reflecting my interest in building practical, intelligent software solutions.
+Python
+FastAPI
+PostgreSQL
+SQLAlchemy
+Pydantic
+REST APIs
+🔗 Repository: https://github.com/akshay-1204/postgresql-fastapi
 
-### 🐍 [Python Programs](https://github.com/akshay-1204/python-programs)
-A collection of Python programs for practicing programming fundamentals, logical thinking, and problem-solving.
+📰 Advanced Fake News Detector
+Machine Learning project focused on detecting potentially misleading news articles using NLP techniques.
 
----
+Highlights
+Text preprocessing
+Feature engineering
+Classification models
+News credibility analysis
+Tech Stack: Python, Scikit-Learn, NLP, Machine Learning
 
-## 🛠️ Technical Skills
+🔗 Repository: https://github.com/akshay-1204/advanced-fake-news-detector
 
-**Programming:** Python, Java, C, SQL
+🧠 AIRA_APP
+AI application project focused on building practical intelligent software solutions.
 
-**AI & Machine Learning:** Machine Learning, Data Science, NLP fundamentals, NumPy, Pandas, Matplotlib, Scikit-learn
+🔗 Repository: https://github.com/akshay-1204/AIRA_APP
 
-**Generative AI:** Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), LangChain, Vector Databases
+🐍 Python Programs
+Collection of Python programs covering:
 
-**Backend Development:** FastAPI, REST APIs, SQLAlchemy, Pydantic
+Python fundamentals
+Logical thinking
+Data structures
+Problem-solving techniques
+Coding practice
+🔗 Repository: https://github.com/akshay-1204/python-programs
 
-**Databases:** PostgreSQL, MySQL
+🛠️ Technical Skills
+Programming Languages
+Python
+Java
+C
+SQL
+Backend Development
+FastAPI
+REST APIs
+SQLAlchemy
+Pydantic
+Backend Architecture
+Databases
+PostgreSQL
+MySQL
+AI & Machine Learning
+Machine Learning
+Data Science
+NumPy
+Pandas
+Matplotlib
+Scikit-Learn
+NLP Fundamentals
+Generative AI
+Large Language Models (LLMs)
+Retrieval-Augmented Generation (RAG)
+LangChain
+Vector Databases
+Prompt Engineering
+Web Technologies
+HTML
+CSS
+JavaScript
+Cloud & Development Tools
+Git
+GitHub
+Docker
+AWS Fundamentals
+Google Cloud Platform (GCP)
+🌱 Currently Learning
+Advanced FastAPI Development
+System Design Fundamentals
+Docker & Containerization
+Linux Administration
+DevOps Fundamentals
+Google Cloud Platform (GCP)
+MLOps
+LLMOps
+Scalable AI Systems
+Vector Databases
+🎯 Career Goals
+Build scalable backend systems
+Develop real-world AI applications
+Master software engineering best practices
+Gain expertise in Generative AI and LLM technologies
+Contribute to impactful open-source projects
+Grow as a Python and Backend Developer
+📊 GitHub Focus Areas
+✅ Python Development
 
-**Web Technologies:** HTML, CSS, JavaScript
+✅ Backend Engineering
 
-**Cloud & Development Tools:** Google Cloud Platform (GCP), AWS fundamentals, Git, GitHub, Docker fundamentals
+✅ FastAPI Projects
 
-*My hands-on experience varies across technologies as I continue learning and building projects.*
+✅ PostgreSQL Databases
 
----
+✅ Artificial Intelligence
 
-## 📚 Currently Learning
+✅ Machine Learning
 
-- Building scalable backend applications using Python and FastAPI.
-- Designing REST APIs and integrating relational databases.
-- Exploring LLM applications, RAG pipelines, and vector search.
-- Improving machine learning fundamentals and problem-solving skills.
-- Learning cloud technologies and application deployment.
+✅ Generative AI
 
----
+✅ RAG Applications
 
-## 🎯 Career Goals
+✅ LLM Workflows
 
-- Build reliable, real-world software and AI applications.
-- Strengthen my Python development and software engineering skills.
-- Develop practical expertise in Generative AI and backend development.
-- Collaborate with developers and contribute to meaningful projects.
+✅ Open Source Learning
 
----
+🤝 Open To Opportunities
+I'm actively interested in:
 
-## 🤝 Let's Connect
+Python Developer Roles
+Backend Developer Roles
+AI/ML Roles
+Generative AI Opportunities
+Internship Positions
+Open Source Collaborations
+🚀 Let's Build Something Amazing Together!
+I'm always learning, building, and experimenting with new technologies.
 
-I'm always interested in learning, collaborating on projects, connecting with developers, and exploring entry-level opportunities in Python Development, Backend Development, AI/ML, and Generative AI.
+If you're interested in Python Development, Backend Engineering, AI/ML, or Generative AI, feel free to connect with me.
 
-- 💼 [LinkedIn](https://www.linkedin.com/in/akshay-chowdary-638b01248)
-- 💻 [GitHub](https://github.com/akshay-1204)
-- 🌐 [Portfolio Website](https://akshay-1204.github.io/akshay-1204/)
-
----
-
-⭐ **Thanks for visiting my profile!** Feel free to explore my repositories and follow my journey in software development and AI.
+⭐ Thanks for visiting my profile!

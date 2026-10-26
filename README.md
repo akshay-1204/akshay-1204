@@ -90,6 +90,23 @@ Collection of backend development projects demonstrating REST API development an
 
 ---
 
+### 🛡️ [Satyavani AI](https://github.com/akshay-1204/advanced-fake-news-detector) — Multilingual Anti-Hallucination Fact-Checking Engine
+![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
+![LangGraph](https://img.shields.io/badge/LangGraph-Agentic_AI-orange)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-pgvector-336791?logo=postgresql&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
+
+- 🔍 **Strict Fact-Checking Pipeline**: Answers claims exclusively from verified news outlets and published fact-checks, eliminating generative AI hallucinations.
+- 🌐 **Multilingual Semantic RAG**: Real-time claim verification across English, Hindi, and Telugu using `BAAI/bge-m3` dense/sparse embeddings.
+- ⚡ **High-Performance Vector Search**: PostgreSQL 16 + `pgvector` with HNSW cosine indexing for sub-second claim retrieval.
+- 🤖 **Agentic Routing with LangGraph**: Dynamically orchestrates claim validation, Google Fact Check API lookups, and multi-provider LLM inference (Ollama, NVIDIA NIM, Groq).
+
+
+---
+
+
 
 # 🛠️ Technical Skills
 

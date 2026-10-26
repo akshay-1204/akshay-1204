@@ -90,7 +90,7 @@ Collection of backend development projects demonstrating REST API development an
 
 ---
 
-### 🛡️ [Satyavani AI](https://github.com/akshay-1204/advanced-fake-news-detector) — Multilingual Anti-Hallucination Fact-Checking Engine
+### 🛡️ Advanced Fake News Detector [Satyavani AI](https://github.com/akshay-1204/advanced-fake-news-detector) — Multilingual Anti-Hallucination Fact-Checking Engine
 ![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
 ![LangGraph](https://img.shields.io/badge/LangGraph-Agentic_AI-orange)

@@ -9,19 +9,20 @@ I specialize in designing robust REST APIs, preventing LLM hallucinations throug
 ---
 
 ## 🌐 Connect With Me
-
 <p align="left">
-  <a href="https://akshay-1204.github.io/akshay-1204/" target="_blank">
-    <img src="https://img.shields.io/badge/Portfolio-Visit%20Website-10B981?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Portfolio" />
-  </a>
-  <a href="https://www.linkedin.com/in/akshay-chowdary-638b01248" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a>
-  <a href="https://github.com/akshay-1204" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-  </a>
+<a href="https://akshay-1204.github.io/akshay-1204/" target="_blank">
+<img src="https://img.shields.io/badge/Portfolio-Visit%20Website-10B981?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Portfolio" />
+</a>
+<a href="https://www.linkedin.com/in/akshay-chowdary-638b01248" target="_blank">
+<img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+</a>
+<a href="https://github.com/akshay-1204" target="_blank">
+<img src="https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+</a>
+<a href="https://wa.me/919492992240?text=Hi%20Akshay%2C%20I%20visited%20your%20portfolio%20and%20was%20impressed%20by%20your%20work%20in%20Python%2C%20FastAPI%2C%20and%20Generative%20AI.%20I%20would%20like%20to%20connect%20regarding%20a%20potential%20opportunity%20or%20project.%20Thank%20you." target="_blank">
+<img src="https://img.shields.io/badge/WhatsApp-Message%20Me-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp" />
+</a>
 </p>
-
 ---
 
 ## 🛠️ Tech Stack & Skills
